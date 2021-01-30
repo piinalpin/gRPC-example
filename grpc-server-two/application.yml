@@ -1,0 +1,8 @@
+server:
+  port: 8081
+grpc:
+  server:
+    port: 9091
+grpcServerOne:
+  host: localhost
+  port: 9090

@@ -1,0 +1,26 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.example.grpc.servertwo.server;
+
+message UserRequest {
+    string username = 1;
+    string password = 2;
+    string fullName = 3;
+}
+
+message User {
+    string username = 1;
+    string password = 2;
+    string fullName = 3;
+    string status = 4;
+    string createdAt = 5;
+}
+
+message UserResponse {
+    repeated User user = 1;
+}
+
+service UserServiceServerTwo {
+    rpc createUser(UserRequest) returns (User);
+    rpc getAll(UserRequest) returns (UserResponse);
+}
